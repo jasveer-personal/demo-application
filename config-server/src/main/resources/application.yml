@@ -1,0 +1,19 @@
+server:
+  port: 8191
+
+spring:
+  profiles:
+    active: native, default
+  cloud:
+    config:
+      server:
+        native:
+          searchLocations:
+            - file:///D:/Users/BISHTJ/Downloads/config-repo
+            - file:///D:/Users/BISHTJ/Downloads/config-repo/service-config/{application}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

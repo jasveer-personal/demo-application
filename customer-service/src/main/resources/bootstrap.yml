@@ -1,0 +1,25 @@
+server:
+  port: 0
+
+spring:
+  application:
+    name: customer
+  cloud:
+    config:
+      uri: http://localhost:8191
+      discovery:
+        enabled: true
+  profiles:
+    active: default
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+    register-with-eureka: true
+    fetch-registry: true
+    enabled: true
+  instance:
+    instance-id: ${spring.application.name}-${random.int}
+    hostname: ${spring.application.name}
+    prefer-ip-address: true
