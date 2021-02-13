@@ -22,4 +22,5 @@ eureka:
   instance:
     instance-id: ${spring.application.name}-${random.int}
     hostname: ${spring.application.name}
+    appname: ${spring.application.name}
     prefer-ip-address: true

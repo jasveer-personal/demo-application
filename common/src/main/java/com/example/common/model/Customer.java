@@ -1,4 +1,5 @@
-package com.example.customerservice.model;
+package com.example.common.model;
+
 
 import javax.persistence.*;
 
@@ -41,5 +42,3 @@ public class Customer {
         this.emailId = emailId;
     }
 }
-
-

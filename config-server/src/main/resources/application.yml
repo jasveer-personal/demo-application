@@ -2,6 +2,8 @@ server:
   port: 8191
 
 spring:
+  application:
+    name: configserver
   profiles:
     active: native, default
   cloud:
@@ -11,6 +13,19 @@ spring:
           searchLocations:
             - file:///D:/Users/BISHTJ/Downloads/config-repo
             - file:///D:/Users/BISHTJ/Downloads/config-repo/service-config/{application}
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+    register-with-eureka: true
+    fetch-registry: true
+    enabled: true
+  instance:
+    instance-id: ${spring.application.name}-${random.int}
+    hostname: ${spring.application.name}
+    prefer-ip-address: true
 
 management:
   endpoints:

@@ -1,6 +1,6 @@
 package com.example.customerservice.controller;
 
-import com.example.customerservice.model.Customer;
+import com.example.common.model.Customer;
 import com.example.customerservice.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -11,6 +11,9 @@ import java.util.List;
 @RestController
 public class CustomerController {
 
+    public CustomerController() {
+        System.out.println("--------------------------------------------------------------------------this is customer controller");
+    }
     @Autowired
     RestTemplate restTemplate;
 
