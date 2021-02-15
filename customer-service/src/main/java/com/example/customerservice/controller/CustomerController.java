@@ -42,4 +42,14 @@ public class CustomerController {
         return  customerService.getFullDetails(id);
     }
 
+    @GetMapping(value = "/customer/full/{id}/cbbyclass")
+    public CustomerVehicleDetails getFullDetailsUsingCircuitBreakerClass(@PathVariable Integer id) {
+        return  customerService.getFullDetailsUsingCircuitBreakerClass(id);
+    }
+
+    @GetMapping(value = "/customer/full/{id}/commoncb")
+    public CustomerVehicleDetails getFullDetailsUsingCommonCircuitBreakerClass(@PathVariable Integer id) {
+        return  customerService.getFullDetailsUsingCommonCircuitBreakerClass(id);
+    }
+
 }
