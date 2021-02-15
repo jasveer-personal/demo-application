@@ -1,7 +1,10 @@
-package com.example.common.model;
+package com.example.common.model.customer;
 
+
+import com.example.common.model.vehicle.Vehicle;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name= "customer", schema = "demo")
@@ -17,6 +20,9 @@ public class Customer {
 
     @Column(name = "emailid")
     private String emailId;
+
+    @OneToMany(mappedBy = "customer")
+    private List<Vehicle> vehicles;
 
     public Integer getId() {
         return id;
@@ -40,5 +46,13 @@ public class Customer {
 
     public void setEmailId(String emailId) {
         this.emailId = emailId;
+    }
+
+    public List<Vehicle> getVehicles() {
+        return vehicles;
+    }
+
+    public void setVehicles(List<Vehicle> vehicles) {
+        this.vehicles = vehicles;
     }
 }
